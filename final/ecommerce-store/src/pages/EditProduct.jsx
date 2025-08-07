@@ -13,7 +13,7 @@ import { z } from "zod";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-// schema
+
 const productSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
@@ -38,7 +38,7 @@ function EditProduct() {
 
   const [loading, setLoading] = useState(true);
 
-  // fetch product
+  
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -53,12 +53,12 @@ function EditProduct() {
     fetchProduct();
   }, [id]);
 
-  // input handler
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // submit handler
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

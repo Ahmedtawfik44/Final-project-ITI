@@ -48,7 +48,7 @@ function Login() {
       );
 
 
-      // Save user + token
+      
       localStorage.setItem("user", JSON.stringify(res.data));
 
       toast.success("Login successful!");

@@ -13,7 +13,6 @@ import { z } from "zod";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-// ✅ Validation schema باستخدام zod
 const productSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
@@ -47,7 +46,7 @@ function AddProduct() {
     const result = productSchema.safeParse(formData);
 
     if (!result.success) {
-      const msg = result.error.issues[0].message; // ✅ تعديل هنا
+      const msg = result.error.issues[0].message;
       toast.error(msg);
       setLoading(false);
       return;

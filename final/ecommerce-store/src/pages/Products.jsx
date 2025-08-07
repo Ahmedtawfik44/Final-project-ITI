@@ -17,7 +17,7 @@ function Products() {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // fetch all products
+ 
   const fetchProducts = async () => {
     try {
       const res = await axios.get("http://localhost:3000/products");
@@ -33,7 +33,7 @@ function Products() {
     fetchProducts();
   }, []);
 
-  // delete product
+
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure to delete this product?");
     if (!confirm) return;
